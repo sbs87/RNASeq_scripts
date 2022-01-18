@@ -1,0 +1,1 @@
+grep Surviv "/home/stsmith/qsub_logs/SRL_trimmomatic."$1.*"error" | sed 's/.*trimmomatic\.`//g' | sed 's/Input Reads: //g' | sed 's/ Surviving: /\t/g'| sed 's/ (/\t/g' > $1.tmp; echo $1 | paste - $1.tmp >> $2; rm $1.tmp
